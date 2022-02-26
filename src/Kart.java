@@ -10,7 +10,6 @@ public class Kart {
     private final static int MAX_RANDOM = 6;
     
     public Kart(String driver) {
-        super();
         this.driver = driver;
         init();
     }
@@ -71,7 +70,8 @@ public class Kart {
     }
     
     public int move() {
-        return this.speed + this.acceleration + random.nextInt(MAX_RANDOM);
+    	int distance = this.speed + this.acceleration + random.nextInt(MAX_RANDOM);
+    	return distance;
     }
 
 	@Override
