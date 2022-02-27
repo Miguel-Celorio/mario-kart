@@ -12,8 +12,10 @@ public class Race {
 	}
 	
 	public void run() {
-		while(!notAllFinished()) {
-			for(Kart kart : karts) {
+		List<Kart> kartsCopy = new ArrayList<Kart>();
+		kartsCopy.addAll(karts);
+		while(notAllFinished()) {
+			for(Kart kart : kartsCopy) {
 				moveKart(kart);
 				if(isFinished(kart)) {
 					moveToFinished(kart);
@@ -23,12 +25,7 @@ public class Race {
 	}
 	
 	private boolean notAllFinished() {
-		for(Kart kart : karts) {
-			if(kart != null) {
-				return true;
-			}
-		}
-		return false;
+		return !karts.isEmpty();
 	}
 	
 	private void moveKart(Kart kart) {

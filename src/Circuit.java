@@ -38,7 +38,7 @@ public class Circuit {
 		builder.append(name);
 		builder.append(", distance=");
 		builder.append(distance);
-		builder.append("]");
+		builder.append("]\n");
 		return builder.toString();
 	}
 	
